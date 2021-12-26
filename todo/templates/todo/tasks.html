@@ -1,0 +1,25 @@
+{% extends 'todo/index.html' %}
+{% load static %}
+{% block task %}
+    <table class="table  table-hover">
+  <thead>
+    <tr>
+      <th scope="col">S no.</th>
+      <th scope="col">Tasks</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% comment %} run a for loop {% endcomment %}
+  {% for task in tasks  %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{task.hellotask}}</td>
+      <td>{{task.time}}</td>
+      <td><img src='{% static 'todo/images/close.svg' alt ='close button' %}' class='delete_btn'></td>
+
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock task %}
